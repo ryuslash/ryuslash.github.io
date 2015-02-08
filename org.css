@@ -45,6 +45,7 @@ pre {
     padding: 5px !important;
     border: none;
     border-radius: 4px;
+    overflow: auto !important;
 }
 
 pre.src:before { color: #111111; border-radius: 3px; }
