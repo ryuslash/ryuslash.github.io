@@ -8,9 +8,11 @@ layout: default
 
   <ul class="post-list">
     {% for project in site.github.public_repositories %}
-      <li>
-        <a href="{{ project.html_url }}">{{ project.name }}</a>
-      </li>
+      {% if project.has_pages %}
+        <li>
+          <a href="{{ project.html_url }}">{{ project.name }}</a>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 
