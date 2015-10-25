@@ -8,11 +8,13 @@ layout: default
 
   <ul class="post-list">
     {% for project in site.github.public_repositories %}
-      {% if !project.fork and project.has_pages and project.homepage %}
-        <li>
-          <a href="{{ project.homepage }}">{{ project.name }}</a>
-        </li>
-      {% endif %}
+      {% unless project.fork %}
+        {% if project.has_pages and project.homepage %}
+          <li>
+            <a href="{{ project.homepage }}">{{ project.name }}</a>
+          </li>
+        {% endif %}
+      {% endunless %}
     {% endfor %}
   </ul>
 
