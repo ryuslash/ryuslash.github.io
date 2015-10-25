@@ -10,7 +10,7 @@ layout: default
     {% for project in site.github.public_repositories %}
       {% if project.has_pages %}
         <li>
-          <a href="{{ project.html_url }}">{{ project.name }}</a>
+          <a href="{{ project.homepage }}">{{ project.name }}</a>
         </li>
       {% endif %}
     {% endfor %}
