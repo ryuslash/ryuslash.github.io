@@ -50,6 +50,7 @@ pre {
 
 pre.src:before { color: #111111; border-radius: 3px; }
 pre.src-makefile:before { content: "Makefile"; }
+pre.src-conf-xdefaults { content: "Xdefaults"; }
 
 p > b:first-child {
     float: left;
