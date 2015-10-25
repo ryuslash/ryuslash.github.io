@@ -8,7 +8,7 @@ layout: default
 
   <ul class="post-list">
     {% for project in site.github.public_repositories %}
-      {% if project.has_pages %}
+      {% if !project.fork && project.has_pages %}
         <li>
           <a href="{{ project.homepage }}">{{ project.name }}</a>
         </li>
