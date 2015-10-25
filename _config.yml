@@ -1,0 +1,11 @@
+# Site settings
+title: "ryuslash's Projects"
+email: tom@ryuslash.org
+description: > # this means to ignore newlines until "baseurl:"
+  A list of all my projects.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://projects.ryuslash.org" # the base hostname & protocol for your site
+github_username:  ryuslash
+
+# Build settings
+markdown: kramdown
