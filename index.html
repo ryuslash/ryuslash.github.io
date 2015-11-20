@@ -6,16 +6,32 @@ layout: default
 
   <h1 class="page-heading">Projects</h1>
 
-  <ul class="post-list">
+  <dl class="post-list">
     {% for project in site.github.public_repositories %}
-      {% unless project.fork %}
-        {% if project.homepage and project.homepage != "" %}
-          <li>
-            <a href="{{ project.homepage }}">{{ project.name }}</a>
-          </li>
-        {% endif %}
-      {% endunless %}
+      {% if project.fork == false and project.homepage and project.homepage != "" %}
+        <dt>
+          <a href="{{ project.homepage }}">{{ project.name }}</a>
+          <span class="pull-right">
+            starred: {{ project.stargazers_count }},
+            forked: {{ project.forks_count }}<span {% unless project.has_issues %}style="visibility: hidden"{% endunless %}>,
+              open issues: {{ project.open_issues_count }}
+            </span>
+          </span>
+        </dt>
+        <dd>
+          {{ project.description }}
+          <span class="pull-right">{{ project.language }}</span>
+          <ul>
+            {% if project.has_issues %}
+              <li><a href="{{ project.html_url }}/issues">Issues</a></li>
+            {% endif %}
+            {% if project.has_wiki %}
+              <li><a href="{{ project.html_url }}/wiki">Wiki</a></li>
+            {% endif %}
+          </ul>
+        </dd>
+      {% endif %}
     {% endfor %}
-  </ul>
+  </dl>
 
 </div>
